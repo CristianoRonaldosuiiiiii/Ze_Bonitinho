@@ -1,0 +1,392 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap');
+
+/* --- Variáveis CSS --- */
+:root {
+    --primary-color: #A0522D; /* Sépia, tom terroso para elegância */
+    --secondary-color: #D2B48C; /* Tan, mais claro */
+    --accent-color: #8B0000; /* Vermelho escuro para destaque */
+    --text-color: #333;
+    --light-bg: #F8F8F8;
+    --dark-bg: #2C3E50; /* Azul escuro quase preto */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* --- Reset Básico e Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.8em;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; text-align: center; margin-bottom: 1.5em;}
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #B22222; /* Um vermelho um pouco mais claro */
+}
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.section-padded {
+    padding: 80px 0;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* --- Header e Navegação --- */
+header {
+    background-color: var(--dark-bg);
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+nav .nav-list {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-list li {
+    margin-left: 30px;
+}
+
+nav .nav-list a {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1.1em;
+}
+
+nav .nav-list a:hover {
+    color: var(--secondary-color);
+}
+
+.menu-toggle {
+    display: none; /* Escondido por padrão em telas grandes */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1500x700?text=Culinaria+Francesa+Hero') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* --- Receitas Grid --- */
+.recipe-grid, .blog-grid, .ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px; /* Limita a largura para melhor visualização */
+    margin: 0 auto;
+}
+
+.recipe-card, .blog-post-card, .ingredient-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.recipe-card:hover, .blog-post-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-card img, .blog-post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.recipe-card h3, .blog-post-card h4 {
+    margin: 20px 15px 10px 15px;
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.recipe-card p, .blog-post-card p {
+    padding: 0 15px 20px 15px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.recipe-card .btn-small, .blog-post-card .btn-small {
+    margin-bottom: 20px;
+}
+
+.ingredient-card {
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.ingredient-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.ingredient-card p {
+    color: #666;
+    font-size: 0.95em;
+}
+
+
+/* --- Seções de Conteúdo Geral --- */
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+.content-block {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.content-block h3 {
+    color: var(--primary-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.content-block p, .content-block ul {
+    margin-bottom: 1em;
+    line-height: 1.8;
+}
+
+.content-block ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.content-block ul li {
+    margin-bottom: 0.5em;
+}
+
+/* --- Formulário de Contato --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: flex-start;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-bg);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%); /* Para ícones brancos */
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 768px) {
+    header .container {
+        flex-wrap: wrap;
+    }
+
+    nav .nav-list {
+        display: none; /* Esconde o menu em telas menores por padrão */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-bg);
+        position: absolute;
+        top: 80px; /* Altura do header */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 8px 10px rgba(0,0,0,0.3);
+    }
+
+    nav .nav-list.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    nav .nav-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostra o ícone de menu */
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+
+    .section-padded {
+        padding: 50px 0;
+    }
+
+    .recipe-grid, .blog-grid, .ingredient-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+
+    .recipe-card, .blog-post-card {
+        margin: 0 15px; /* Adiciona algum espaçamento lateral */
+    }
+
+    footer .container {
+        padding: 0 15px;
+    }
+}
