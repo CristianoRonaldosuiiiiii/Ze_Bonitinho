@@ -47,7 +47,11 @@ main {
     font-size: 1.1rem;
     text-align: center;
     margin-bottom: 2rem;
-    font-style: italic;
+    font-style: bold;
+}
+
+.ingredients {
+    text-align: left;
 }
 
 .recipe-image {
