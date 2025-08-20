@@ -386,7 +386,11 @@ footer .container {
         margin: 0 15px; /* Adiciona algum espaçamento lateral */
     }
 
-    footer .container {
-        padding: 0 15px;
-    }
+    footer {
+    text-align: center;
+    padding: 1rem 0;
+    color: #ffffff;
+    background-color: #999999;
+    font-size: 0.9rem;
+}
 }
