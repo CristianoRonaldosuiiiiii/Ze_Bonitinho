@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background-color: #5d2b27;
+    background-color: var(--dark-bg);
     color: #fff;
     padding: 2rem;
     display: flex;
